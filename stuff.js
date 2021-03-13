@@ -1,6 +1,20 @@
-function sq(){
-t.fd(50);t.rt(90);t.fd(50);t.rt(90);
-t.fd(50);t.rt(90);t.fd(50);t.rt(90);
+function sq(t,len){
+for(let j=0; j<4; j++){
+	t.fd(len);t.rt(90);
+}
+}
+
+function multisqs (t,len,num){
+for (let j=0; j<num;j++){
+	sq(t,j*len);
+}
+}
+
+function stairs(t,len,num){
+	for(let j=1;j<num+1;j=j+1){
+		sq(t,len);t.fd(len);t.rt(90);
+		t.fd(len);t.lt(90);
+	}
 }
 
 function v1(len,t) {
@@ -23,17 +37,6 @@ function v(len,t) {
 }
 
 
-function sqs (t,j,len){
-	if(j==0){}
-	else{
-		squs(t,j-1,len);
-		t.bk(len*(j-1));t.lt(90);t.bk(len);t.rt(90);
-	for(let k=0;k<j;k++){
-		sq(t,len);t.fd(len);
-	}
-	}
-}
-
 
 function chaos(t,n){
 	if(n<2){}
@@ -43,3 +46,9 @@ function chaos(t,n){
 	}
 }
 
+
+function shapes(t2,len){
+	for(let j=0; j<8; j++){
+	t2.fd(len);t2.rt(95);
+	
+}}
